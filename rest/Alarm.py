@@ -16,6 +16,9 @@ class Alarm(object):
 
 
     def off(self):
+        GPIO.setup( self.led, GPIO.OUT)
+        GPIO.setup( self.sensor, GPIO.IN) 
+        GPIO.setup( self.sirene, GPIO.OUT)
         self.alarmOff()
         self.cleanAllPins()
 
