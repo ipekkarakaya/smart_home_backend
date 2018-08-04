@@ -16,6 +16,7 @@ class Alarm(object):
 
 
     def off(self):
+        GPIO.setmode(GPIO.BCM)
         GPIO.setup( self.led, GPIO.OUT)
         GPIO.setup( self.sensor, GPIO.IN) 
         GPIO.setup( self.sirene, GPIO.OUT)
