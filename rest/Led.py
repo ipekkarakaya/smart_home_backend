@@ -10,5 +10,7 @@ class Led(object):
         GPIO.output(14,True)
 
     def off(self):
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setup(14,GPIO.OUT)
         GPIO.output(14,False)
         GPIO.cleanup(14)
