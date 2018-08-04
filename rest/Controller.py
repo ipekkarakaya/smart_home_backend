@@ -17,16 +17,21 @@ def ledOff():
     led.off()
     return ""
 
-@app.route("/alarm/on", methods=["POST"])
-def alarmOn():
+@app.route("/alarm/activate", methods=["POST"])
+def alarmActivate():
     alarm.on()
     return ""
 
-@app.route("/alarm/off", methods=["POST"])
-def alarmkOff():
+@app.route("/alarm/deactivate", methods=["POST"])
+def alarmkDeactivate():
     alarm.off()
     return ""
 
+
+@app.route("/alarm/off", methods=["POST"])
+def alarmkOff():
+    alarm.turnAlarmOff()
+    return ""
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8080)
