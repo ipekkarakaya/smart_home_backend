@@ -8,12 +8,12 @@ led = Led()
 @app.route("/Led/on", methods=["POST"])
 def ledOn():
     led.on()
-    return 
+    return " "
 
 @app.route("/Led/off", methods=["POST"])
 def ledOff():
     led.off()
-    return 
+    return " "
 
 if __name__ == "__main__":
     app.run(debug=True)
