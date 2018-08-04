@@ -7,6 +7,7 @@ class Alarm(object):
         self.sensor = 25
 
     def on(self):
+        self.cleanAllPins()
         GPIO.setmode(GPIO.BCM)
         GPIO.setup( self.led, GPIO.OUT)
         GPIO.setup( self.sensor, GPIO.IN) 
@@ -16,7 +17,7 @@ class Alarm(object):
 
     def off(self):
         self.alarmOff()
-        GPIO.cleanup(self.led, self.sirene, self.sensor)
+        self.cleanAllPins()
 
     def alarmOn(self, channel):
         GPIO.output(self.sirene, True)
@@ -25,3 +26,8 @@ class Alarm(object):
     def alarmOff(self):
         GPIO.output(self.sirene, False)
         GPIO.output(self.led, False)
+
+    def cleanAllPins(self):
+        GPIO.cleanup(self.led)
+        GPIO.cleanup(self.sirene)
+        GPIO.cleanup(self.sensor)
