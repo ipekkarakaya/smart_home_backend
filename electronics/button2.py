@@ -8,17 +8,10 @@ GPIO.setup(23, GPIO.IN)#Button to GPIO23
 GPIO.setup(14, GPIO.OUT)  #LED to GPIO14
 
 def changeLed(channel):
-    GPIO.output(14, True)
-    time.sleep(0.2)
-    GPIO.output(14, False)
-    # if ledIsOn == False:
-    #     GPIO.output(14, True)
-    #     ledIsOn = True
-    # else:
-    #     GPIO.output(14, False)
-    #     ledIsOn = False
-    
-    time.sleep(0.1)
+    if (GPIO.output(14) == True):
+        GPIO.output(14, False)
+    else:
+        GPIO.output(14, True)
 
 GPIO.add_event_detect(23, GPIO.RISING, callback=changeLed, bouncetime=100)
 
