@@ -4,14 +4,16 @@ import time
 
 GPIO.cleanup()
 
+ledIsOn = False
+
 GPIO.setmode(GPIO.BCM)
 def changeLed(channel):
-    ledState = GPIO.input(14)
-
-    if ledState == True:
-        GPIO.output(14, False)
-    else:
+    if ledIsOn == False:
         GPIO.output(14, True)
+        ledIsOn = True
+    else:
+        GPIO.output(14, False)
+        ledIsOn = False
     
     time.sleep(0.1)
 
