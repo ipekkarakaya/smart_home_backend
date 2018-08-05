@@ -26,5 +26,5 @@ class Led(object):
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(self.button, GPIO.IN, pull_up_down=GPIO.PUD_UP)
         GPIO.setup(self.led, GPIO.OUT)
-        GPIO.add_event_detect(self.button, GPIO.RISING, callback=changeLed, bouncetime=300)
+        GPIO.add_event_detect(self.button, GPIO.RISING, callback=self.changeLed, bouncetime=300)
 
