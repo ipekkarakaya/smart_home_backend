@@ -4,6 +4,7 @@ class Led(object):
     def __init__(self):
         self.button = 23
         self.led = 14
+        self.activateButton()
 
     def on(self):
         GPIO.setmode(GPIO.BCM)
