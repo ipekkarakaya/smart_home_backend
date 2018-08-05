@@ -2,7 +2,6 @@ import RPi.GPIO as GPIO
 import time
 
 
-GPIO.cleanup()
 
 ledIsOn = False
 
@@ -29,3 +28,5 @@ GPIO.add_event_detect(23, GPIO.FALLING, callback=changeLed, bouncetime=200)
 
 while 1:
     time.sleep(2)
+
+GPIO.cleanup()
