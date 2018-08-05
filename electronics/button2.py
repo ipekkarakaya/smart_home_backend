@@ -8,7 +8,7 @@ GPIO.setup(23, GPIO.IN)#Button to GPIO23
 GPIO.setup(14, GPIO.OUT)  #LED to GPIO14
 
 def changeLed(channel):
-    if (GPIO.output(14) == True):
+    if (GPIO.input(14) == True):
         GPIO.output(14, False)
     else:
         GPIO.output(14, True)
