@@ -7,8 +7,14 @@ GPIO.cleanup()
 ledIsOn = False
 
 GPIO.setmode(GPIO.BCM)
+
+GPIO.setup(23, GPIO.IN, pull_up_down=GPIO.PUD_UP)#Button to GPIO23
+GPIO.setup(14, GPIO.OUT)  #LED to GPIO14
+
 def changeLed(channel):
     GPIO.output(14, True)
+    time.sleep(0.2)
+    GPIO.output(14, False)
     # if ledIsOn == False:
     #     GPIO.output(14, True)
     #     ledIsOn = True
@@ -18,9 +24,7 @@ def changeLed(channel):
     
     time.sleep(0.1)
 
-GPIO.setup(23, GPIO.IN, pull_up_down=GPIO.PUD_UP)#Button to GPIO23
-GPIO.setup(14, GPIO.OUT)  #LED to GPIO14
-
+GPIO.output(14, False)
 GPIO.add_event_detect(23, GPIO.RISING, callback=changeLed)
 
 while 1:
