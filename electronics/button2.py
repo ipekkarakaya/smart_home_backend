@@ -1,4 +1,5 @@
 import RPi.GPIO as GPIO
+import time
 
 
 GPIO.cleanup()
@@ -17,3 +18,5 @@ GPIO.setup(14, GPIO.OUT)  #LED to GPIO14
 
 GPIO.add_event_detect(23, GPIO.RISING, callback=changeLed)
 
+while 1:
+    time.sleep(2)
