@@ -2,6 +2,8 @@ import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BCM)
 
+test = 1
+
 GPIO.setup(23, GPIO.IN, pull_up_down=GPIO.PUD_UP)#Button to GPIO23
 GPIO.setup(14, GPIO.OUT)  #LED to GPIO14
 
