@@ -8,12 +8,13 @@ ledIsOn = False
 
 GPIO.setmode(GPIO.BCM)
 def changeLed(channel):
-    if ledIsOn == False:
-        GPIO.output(14, True)
-        ledIsOn = True
-    else:
-        GPIO.output(14, False)
-        ledIsOn = False
+    GPIO.output(14, True)
+    # if ledIsOn == False:
+    #     GPIO.output(14, True)
+    #     ledIsOn = True
+    # else:
+    #     GPIO.output(14, False)
+    #     ledIsOn = False
     
     time.sleep(0.1)
 
