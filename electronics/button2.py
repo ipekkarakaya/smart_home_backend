@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 
 
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BCM)
 
 GPIO.setup(23, GPIO.IN)#Button to GPIO23
 GPIO.setup(14, GPIO.OUT)  #LED to GPIO14
