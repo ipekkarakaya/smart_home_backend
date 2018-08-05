@@ -2,11 +2,9 @@ import RPi.GPIO as GPIO
 import time
 
 
-ledIsOn = False
+GPIO.setmode(GPIO.BOARD)
 
-GPIO.setmode(GPIO.BCM)
-
-GPIO.setup(23, GPIO.IN, pull_up_down=GPIO.PUD_UP)#Button to GPIO23
+GPIO.setup(23, GPIO.IN)#Button to GPIO23
 GPIO.setup(14, GPIO.OUT)  #LED to GPIO14
 
 def changeLed(channel):
@@ -22,8 +20,7 @@ def changeLed(channel):
     
     time.sleep(0.1)
 
-GPIO.output(14, False)
-GPIO.add_event_detect(23, GPIO.FALLING, callback=changeLed, bouncetime=200)
+GPIO.add_event_detect(23, GPIO.RISING, callback=changeLed, bouncetime=100)
 
 while 1:
     time.sleep(2)
