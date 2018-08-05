@@ -18,12 +18,12 @@ class Led(object):
 
     def activateButton(self):
         GPIO.setmode(GPIO.BCM)
-        GPIO.setup(button, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-        GPIO.setup(led, GPIO.OUT)
-        GPIO.add_event_detect(23, GPIO.RISING, callback=changeLed, bouncetime=300)
+        GPIO.setup(self.button, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+        GPIO.setup(self.led, GPIO.OUT)
+        GPIO.add_event_detect(self.button, GPIO.RISING, callback=changeLed, bouncetime=300)
 
     def changeLed(self, channel):
-        if (GPIO.input(led) == True):
-            GPIO.output(led, False)
+        if (GPIO.input(self.led) == True):
+            GPIO.output(self.led, False)
         else:
-            GPIO.output(led, True)
+            GPIO.output(self.led, True)
