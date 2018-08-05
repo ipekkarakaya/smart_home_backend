@@ -14,9 +14,13 @@ def changeLed(channel):
     # else:
     #     GPIO.output(14, True)
 
-GPIO.add_event_detect(23, GPIO.RISING, callback=changeLed, bouncetime=100)
+try:
+    GPIO.add_event_detect(23, GPIO.RISING, callback=changeLed, bouncetime=100)
+    while 1:
+        time.sleep(2)
 
-while 1:
-    time.sleep(2)
+except KeyboardInterrupt:
+  print('ENDE')
 
-GPIO.cleanup()
+finally:
+  GPIO.cleanup()
