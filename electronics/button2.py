@@ -9,7 +9,7 @@ GPIO.add_event_detect(23, GPIO.RISING, callback=changeLed)
 
 ledState = GPIO.output(14)
 
-def changeLed():
+def changeLed(channel):
     if ledState == True:
         GPIO.output(23, False)
     else:
