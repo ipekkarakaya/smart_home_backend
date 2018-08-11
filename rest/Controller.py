@@ -10,14 +10,15 @@ alarm = Alarm()
 
 @app.route("/Led/on", methods=["POST"])
 def ledOn():
-    response = Response("", status=200)
+    response = Response(" ", status=200)
     response.headers.set("Access-Control-Allow-Origin", "*")
     led.on()
     return response
 
 @app.route("/Led/off", methods=["POST"])
 def ledOff():
-    response = Response("", status=200)
+    response = Response(" ", status=200)
+    response.headers.set("Access-Control-Allow-Origin", "*")
     led.off()
     return response
 
