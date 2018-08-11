@@ -17,8 +17,9 @@ def ledOn():
 
 @app.route("/Led/off", methods=["POST"])
 def ledOff():
-    led.off()
-    return ""
+    response = Response("", status=200)
+    # led.off()
+    return response
 
 @app.route("/alarm/activate", methods=["POST"])
 def alarmActivate():
