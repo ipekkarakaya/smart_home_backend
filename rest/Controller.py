@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, make_response
 from Led import Led
 from Alarm import Alarm
 
@@ -7,10 +7,13 @@ app = Flask(__name__)
 led = Led()
 alarm = Alarm()
 
+
 @app.route("/Led/on", methods=["POST"])
 def ledOn():
-    led.on()
-    return ""
+    response = make_response("")
+    response.headers.set("Access-Control-Allow-Origin", "*")
+    # led.on()
+    return response
 
 @app.route("/Led/off", methods=["POST"])
 def ledOff():
