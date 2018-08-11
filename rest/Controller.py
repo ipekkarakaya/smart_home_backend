@@ -11,12 +11,12 @@ defaultResponse = Response(" ", status=200)
 defaultResponse.headers.set("Content-Type", "text/plain")
 defaultResponse.headers.set("Access-Control-Allow-Origin", "*")
 
-@app.route("/Led/on", methods=["POST"])
+@app.route("/led/on", methods=["POST"])
 def ledOn():
     led.on()
     return defaultResponse
 
-@app.route("/Led/off", methods=["POST"])
+@app.route("/led/off", methods=["POST"])
 def ledOff():
     led.off()
     return defaultResponse
