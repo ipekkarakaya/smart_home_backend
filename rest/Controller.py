@@ -7,21 +7,19 @@ app = Flask(__name__)
 led = Led()
 alarm = Alarm()
 
+defaultResponse = Response(" ", status=200)
+defaultResponse.headers.set("Content-Type", "text/plain")
+defaultResponse.headers.set("Access-Control-Allow-Origin", "*")
 
 @app.route("/Led/on", methods=["POST"])
 def ledOn():
-    response = Response(" ", status=200)
-    response.headers.set("Content-Type", "text/plain")
-    response.headers.set("Access-Control-Allow-Origin", "*")
     led.on()
-    return response
+    return defaultResponse
 
 @app.route("/Led/off", methods=["POST"])
 def ledOff():
-    response = Response(" ", status=200)
-    response.headers.set("Access-Control-Allow-Origin", "*")
     led.off()
-    return response
+    return defaultResponse
 
 @app.route("/alarm/activate", methods=["POST"])
 def alarmActivate():
@@ -29,13 +27,13 @@ def alarmActivate():
     return ""
 
 @app.route("/alarm/deactivate", methods=["POST"])
-def alarmkDeactivate():
+def alarmDeactivate():
     alarm.off()
     return ""
 
 
 @app.route("/alarm/off", methods=["POST"])
-def alarmkOff():
+def alarmOff():
     alarm.turnAlarmOff()
     return ""
 
