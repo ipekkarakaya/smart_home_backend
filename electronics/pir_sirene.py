@@ -6,9 +6,9 @@ import time
 
 GPIO.setmode(GPIO.BCM)
 
-led = 27
-sirene = 24
-sensor = 25
+led = 20
+sirene = 16
+sensor = 21
 
 GPIO.setup(led, GPIO.OUT)
 GPIO.setup(sensor, GPIO.IN) 
