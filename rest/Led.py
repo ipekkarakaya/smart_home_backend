@@ -2,8 +2,8 @@ import RPi.GPIO as GPIO
 
 class Led(object):
     def __init__(self):
-        self.button = 23
-        self.led = 14
+        self.button = 19
+        self.led = 26
         self.activateButton()
 
     def on(self):

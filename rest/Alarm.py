@@ -2,9 +2,9 @@ import RPi.GPIO as GPIO
 
 class Alarm(object):
     def __init__(self):
-        self.led = 27
-        self.sirene = 24
-        self.sensor = 25
+        self.led = 20
+        self.sirene = 16
+        self.sensor = 21
 
     def on(self):
         GPIO.setmode(GPIO.BCM)
