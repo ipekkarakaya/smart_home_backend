@@ -1,6 +1,7 @@
 from flask import Flask, request, make_response, Response
 from Led import Led
 from Alarm import Alarm
+from TemperatureReader import TemperatureReader
 
 app = Flask(__name__)
 
