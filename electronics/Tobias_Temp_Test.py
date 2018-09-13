@@ -11,7 +11,7 @@ DC = 23
 SPI_PORT = 0
 SPI_DEVICE = 0
 
-sensor = Adafruit_DHT.DHT1l
+sensor = Adafruit_DHT.DHT11
 
 pin = 4
 
