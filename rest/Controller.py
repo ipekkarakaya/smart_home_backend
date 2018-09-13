@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 led = Led()
 alarm = Alarm()
+temperatureReader = TemperatureReader()
 
 defaultResponse = Response(" ", status=200)
 defaultResponse.headers.set("Content-Type", "text/plain")
@@ -36,6 +37,14 @@ def alarmDeactivate():
 def alarmOff():
     alarm.turnAlarmOff()
     return defaultResponse
+
+def readTemperature():
+    temperature = temperatureReader.readTemperature()
+    response = Response(temperature, status=200)
+    response.headers.set("Content-Type", "text/plain")
+    response.headers.set("Access-Control-Allow-Origin", "*")
+    return response
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8080)
