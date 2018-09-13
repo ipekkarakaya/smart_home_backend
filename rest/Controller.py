@@ -38,6 +38,7 @@ def alarmDeactivate():
 def alarmOff():
     alarm.turnAlarmOff()
     return defaultResponse
+    
 @app.route("/temperature", methods=["GET"])
 def readTemperature():
     temperature = temperatureReader.readTemperature()
