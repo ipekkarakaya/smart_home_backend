@@ -82,7 +82,7 @@ sensor = Adafruit_DHT.DHT11
 # Example using a Beaglebone Black with DHT sensor
 # connected to pin P8_11.
 #pin = 4
-pin = 21
+pin = 4
 
 # Try to grab a sensor reading.  Use the read_retry method which will retry up
 # to 15 times to get a sensor reading (waiting 2 seconds between each retry).
