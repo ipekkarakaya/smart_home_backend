@@ -20,3 +20,4 @@ while True:
     humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
     str_temp = ' {0:0.2f} *C '.format(temperature)
     print("Temperatur: " + str_temp)
+    sleep(5)
