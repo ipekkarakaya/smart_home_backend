@@ -34,7 +34,7 @@ class TemperatureService(object):
         buttonPin = 27
 
         GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-        GPIO.add_event_detect(buttonPin, GPIO.BOTH, callback=self.readTemperatureAndWriteOnDisplay, bouncetime=300)
+        GPIO.add_event_detect(buttonPin, GPIO.BOTH, callback=self.readTemperatureAndWriteOnDisplayButton, bouncetime=300)
 
     def readTemperature(self):
         humidity, temperature = Adafruit_DHT.read_retry(self.sensor, self.sensorPin)
