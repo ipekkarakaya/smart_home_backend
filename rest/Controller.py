@@ -6,7 +6,7 @@ from Temperature import Temperature
 
 app = Flask(__name__)
 
-led = Led()
+# led = Led()
 alarm = Alarm()
 # temperatureReader = TemperatureReader()
 temperature = Temperature()
@@ -15,15 +15,15 @@ defaultResponse = Response(" ", status=200)
 defaultResponse.headers.set("Content-Type", "text/plain")
 defaultResponse.headers.set("Access-Control-Allow-Origin", "*")
 
-@app.route("/led/on", methods=["POST"])
-def ledOn():
-    led.on()
-    return defaultResponse
+# @app.route("/led/on", methods=["POST"])
+# def ledOn():
+#     led.on()
+#     return defaultResponse
 
-@app.route("/led/off", methods=["POST"])
-def ledOff():
-    led.off()
-    return defaultResponse
+# @app.route("/led/off", methods=["POST"])
+# def ledOff():
+#     led.off()
+#     return defaultResponse
 
 @app.route("/alarm/activate", methods=["POST"])
 def alarmActivate():
