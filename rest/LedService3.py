@@ -1,9 +1,9 @@
 import RPi.GPIO as GPIO
 
-class LedService(object):
+class LedService3(object):
     def __init__(self):
-        self.button = 19
-        self.led = 26
+        self.button = 24
+        self.led = 25
         self.activateButton()
 
     def on(self):
