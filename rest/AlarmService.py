@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 
-class Alarm(object):
+class AlarmService(object):
     def __init__(self):
         self.led = 20
         self.sirene = 16
