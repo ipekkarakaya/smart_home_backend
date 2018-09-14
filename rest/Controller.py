@@ -2,12 +2,14 @@ from flask import Flask, request, make_response, Response
 from Led import Led
 from Alarm import Alarm
 from TemperatureReader import TemperatureReader
+from Temperature import Temperature
 
 app = Flask(__name__)
 
 led = Led()
 alarm = Alarm()
 temperatureReader = TemperatureReader()
+temperature = Temperature()
 
 defaultResponse = Response(" ", status=200)
 defaultResponse.headers.set("Content-Type", "text/plain")
