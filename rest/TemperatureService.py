@@ -41,7 +41,10 @@ class TemperatureService(object):
         temperatureAsString = ' {0:0.2f} *C '.format(temperature)
         return temperatureAsString
 
-    def readTemperatureAndWriteOnDisplay(self, channel):
+    def readTemperatureAndWriteOnDisplayButton(self, channel):
+        self.readTemperatureAndWriteOnDisplay()
+
+    def readTemperatureAndWriteOnDisplay(self):
         self.draw.rectangle((0,0,self.displayWidth,self.displayHeight), outline=0, fill=0)
         temperature = self.readTemperature()
         self.draw.text((5, 15),    temperature,  font=self.font, fill=255)
