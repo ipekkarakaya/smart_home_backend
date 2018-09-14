@@ -57,7 +57,7 @@ def led4On():
 
 @app.route("/led4/off", methods=["POST"])
 def led4Off():
-    ledService3.off()
+    ledService4.off()
     return defaultResponse
 
 @app.route("/alarm/activate", methods=["POST"])
