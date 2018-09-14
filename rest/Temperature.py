@@ -62,6 +62,6 @@ class Temperature(object):
     def writeTemperatureOnDisplay(self, channel):
         self.draw.rectangle((0,0,self.displayWidth,self.displayHeight), outline=0, fill=0)
         temperature = self.readTemperature()
-        self.draw.text((5, 10),    temperature,  self.font, fill=255)
+        self.draw.text((5, 10),    temperature,  self.font)
         self.display.image(self.image)
         self.display.display()
