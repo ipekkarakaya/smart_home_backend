@@ -17,7 +17,7 @@ class Temperature(object):
         self.SPI_PORT = 0
         self.SPI_DEVICE = 0
 
-        buttonPin = 19
+        buttonPin = 27
         GPIO.add_event_detect(buttonPin, GPIO.BOTH, callback=self.writeTemperatureOnDisplay, bouncetime=300)
 
     def prepareDisplay(self):
