@@ -17,7 +17,7 @@ class Temperature(object):
         self.SPI_PORT = 0
         self.SPI_DEVICE = 0
 
-        self.display = Adafruit_SSD1306.SSD1306_128_64(rest=self.RST, i2c_address=0x3C)
+        self.display = Adafruit_SSD1306.SSD1306_128_64(rst=self.RST, i2c_address=0x3C)
         
         self.display.begin()
         self.display.clear()
