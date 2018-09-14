@@ -45,7 +45,7 @@ font24 = ImageFont.truetype('cac_champagne.ttf', 24)
 
 def showText(channel):
     draw.rectangle((0,0,width,height), outline=0, fill=0)
-    draw.text((x, top),    'Joe Mama!',  font=font24, fill=255)
+    draw.text((0, 0),    'Joe Mama!',  font=font24, fill=255)
     disp.image(image)
     disp.display()
 
