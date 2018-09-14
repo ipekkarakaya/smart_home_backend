@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 led = Led()
 alarm = Alarm()
-temperatureReader = TemperatureReader()
+# temperatureReader = TemperatureReader()
 temperature = Temperature()
 
 defaultResponse = Response(" ", status=200)
@@ -41,13 +41,13 @@ def alarmOff():
     alarm.turnAlarmOff()
     return defaultResponse
     
-@app.route("/temperature", methods=["GET"])
-def readTemperature():
-    temperature = temperatureReader.readTemperature()
-    response = Response(temperature, status=200)
-    response.headers.set("Content-Type", "text/plain")
-    response.headers.set("Access-Control-Allow-Origin", "*")
-    return response
+# @app.route("/temperature", methods=["GET"])
+# def readTemperature():
+#     temperature = temperatureReader.readTemperature()
+#     response = Response(temperature, status=200)
+#     response.headers.set("Content-Type", "text/plain")
+#     response.headers.set("Access-Control-Allow-Origin", "*")
+    # return response
 
 
 if __name__ == "__main__":
