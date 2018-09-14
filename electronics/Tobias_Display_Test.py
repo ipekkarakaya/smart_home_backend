@@ -22,7 +22,7 @@ height = disp.height
 image = Image.new('1', (width, height))
 
 draw = ImageDraw.Draw(image)
-draw.rectangle((0,0,width,height), outline=0, fill=0)
+#draw.rectangle((0,0,width,height), outline=0, fill=0)
 
 padding = 2
 shape_width = 20
@@ -36,7 +36,7 @@ font18 = ImageFont.truetype('Minecraftia.ttf', 18)
 font20 = ImageFont.truetype('Minecraftia.ttf', 20)
 font24 = ImageFont.truetype('Minecraftia.ttf', 24)
 
-draw.text((x, top),    'Joe Mama',  font=font24, fill=255)
+draw.text((x, top),    'Joe Mama',  font=font18, fill=255)
 # draw.text((x, top+18), 'DHTxx', font=font24, fill=255)
 
 disp.image(image)
