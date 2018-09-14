@@ -17,29 +17,23 @@ class Temperature(object):
         self.SPI_PORT = 0
         self.SPI_DEVICE = 0
 
+        buttonPin = 19
+        GPIO.add_event_detect(buttonPin, GPIO.BOTH, callback=self.writeTemperatureOnDisplay, bouncetime=300)
+
     def prepareDisplay(self):
-        disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST, i2c_address=0x3C)
+        self.display = Adafruit_SSD1306.SSD1306_128_64(rest=self.RST, i2c_address=0x3C)
         
-        disp.begin()
-        disp.clear()
-        disp.display()
+        self.display.begin()
+        self.display.clear()
+        self.display.display()
 
-        width = disp.width
-        height = disp.height
-        image = Image.new('1', (width, height))
+        self.displayWidth = self.display.width
+        self.displayHeight = self.display.height
+        self.image = Image.new('1', (self.displayWidth, self.displayHeight))
+        self.draw = ImageDraw.Draw(self.image)
+        self.draw.rectangle((0,0,self.displayWidth,self.displayHeight), outline=0, fill=0)        
 
-        self.draw = ImageDraw.Draw(image)
-
-        self.padding = 2
-        shape_width = 20
-        top = padding
-        bottom = height-padding
-
-        x = padding
-
-        self.fontSmall = ImageFont.truetype('cac_champagne.ttf', 18)
-        self.fontNormal = ImageFont.truetype('cac_champagne.ttf', 20)
-        self.fontBig = ImageFont.truetype('cac_champagne.ttf', 24)
+        self.font = ImageFont.truetype('Roboto-Medium.ttf', 36)
 
     def readTemperature(self):
         humidity, temperature = Adafruit_DHT.read_retry(self.sensor, self.sensorPin)
@@ -47,7 +41,11 @@ class Temperature(object):
         return temperatureAsString
 
     def showTemperatureOnDisplay(self):
-        draw.rectangle((0,0,width,height), outline=0, fill=0)
         test = ""
 
     def writeTemperatureOnDisplay(self, channel):
+        self.draw.rectangle((0,0,self.displayWidth,self.displayHeight), outline=0, fill=0)
+        temperature = self.readTemperature()
+        self.draw.text((5, 10),    temperature,  self.font, fill=255)
+        self.display.image(self.image)
+        self.display.display()
