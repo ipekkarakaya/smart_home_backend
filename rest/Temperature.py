@@ -17,6 +17,8 @@ class Temperature(object):
         self.SPI_PORT = 0
         self.SPI_DEVICE = 0
 
+        self.prepareDisplay()
+
         buttonPin = 27
 
         GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)#Button to GPIO23
