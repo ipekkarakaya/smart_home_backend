@@ -6,7 +6,7 @@ from Temperature import Temperature
 
 app = Flask(__name__)
 
-# led = Led()
+led = Led()
 alarm = Alarm()
 # temperatureReader = TemperatureReader()
 temperature = Temperature()
