@@ -56,7 +56,7 @@ GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 
 try:
-    GPIO.add_event_detect(buttonPin, GPIO.BOTH, callback=showText, bouncetime=300)
+    GPIO.add_event_detect(buttonPin, GPIO.RISING, callback=showText, bouncetime=300)
     while 1:
         time.sleep(2)
 
