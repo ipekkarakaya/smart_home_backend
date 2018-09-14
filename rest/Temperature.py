@@ -29,7 +29,7 @@ class Temperature(object):
         self.draw = ImageDraw.Draw(self.image)
         self.draw.rectangle((0,0,self.displayWidth,self.displayHeight), outline=0, fill=0)        
 
-        self.font = ImageFont.truetype('Roboto-Medium.ttf', 36)
+        self.font = ImageFont.truetype('Roboto-Medium.ttf', 30)
 
         buttonPin = 27
 
