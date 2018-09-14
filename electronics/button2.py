@@ -14,7 +14,7 @@ def changeLed(channel):
         GPIO.output(23, True)
 
 try:
-    GPIO.add_event_detect(11, GPIO.RISING, callback=changeLed, bouncetime=300)
+    GPIO.add_event_detect(11, GPIO.BOTH, callback=changeLed, bouncetime=300)
     while 1:
         time.sleep(2)
 
