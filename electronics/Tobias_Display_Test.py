@@ -36,7 +36,7 @@ font18 = ImageFont.truetype('Minecraftia.ttf', 18)
 font20 = ImageFont.truetype('Minecraftia.ttf', 20)
 font24 = ImageFont.truetype('Minecraftia.ttf', 24)
 
-draw.text((x, top),    'Joe Mama',  font=font, fill=255)
+draw.text((x, top),    'Joe Mama',  font=font24, fill=255)
 # draw.text((x, top+18), 'DHTxx', font=font24, fill=255)
 
 disp.image(image)
