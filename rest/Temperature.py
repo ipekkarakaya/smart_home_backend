@@ -17,7 +17,19 @@ class Temperature(object):
         self.SPI_PORT = 0
         self.SPI_DEVICE = 0
 
-        self.prepareDisplay()
+        self.display = Adafruit_SSD1306.SSD1306_128_64(rest=self.RST, i2c_address=0x3C)
+        
+        self.display.begin()
+        self.display.clear()
+        self.display.display()
+
+        self.displayWidth = self.display.width
+        self.displayHeight = self.display.height
+        self.image = Image.new('1', (self.displayWidth, self.displayHeight))
+        self.draw = ImageDraw.Draw(self.image)
+        self.draw.rectangle((0,0,self.displayWidth,self.displayHeight), outline=0, fill=0)        
+
+        self.font = ImageFont.truetype('Roboto-Medium.ttf', 36)
 
         buttonPin = 27
 
