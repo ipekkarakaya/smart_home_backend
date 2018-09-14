@@ -36,7 +36,7 @@ font18 = ImageFont.truetype('Pacifico.ttf', 18)
 font20 = ImageFont.truetype('Pacifico.ttf', 20)
 font24 = ImageFont.truetype('Pacifico.ttf', 24)
 
-draw.text((x, top),    'Fuck off',  font=font18, fill=255)
+draw.text((x, top),    'JoeMama!',  font=font18, fill=255)
 # draw.text((x, top+18), 'DHTxx', font=font24, fill=255)
 
 disp.image(image)
