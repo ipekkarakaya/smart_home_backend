@@ -45,7 +45,7 @@ font24 = ImageFont.truetype('Roboto-Medium.ttf', 24)
 
 def showText(channel):
     draw.rectangle((0,0,width,height), outline=0, fill=0)
-    draw.text((10, 0),    'Joe Mama!',  font=font24, fill=255)
+    draw.text((50, 0),    '24.5 *C',  font=font24, fill=255)
     disp.image(image)
     disp.display()
 
