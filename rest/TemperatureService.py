@@ -50,3 +50,4 @@ class TemperatureService(object):
         self.draw.text((5, 15),    temperature,  font=self.font, fill=255)
         self.display.image(self.image)
         self.display.display()
+        return temperature
