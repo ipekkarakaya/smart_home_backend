@@ -6,12 +6,12 @@ import time
 
 GPIO.setmode(GPIO.BCM)
 
-GPIO.setup(19, GPIO.IN, pull_up_down=GPIO.PUD_UP)#Button to GPIO23
+GPIO.setup(27, GPIO.IN, pull_up_down=GPIO.PUD_UP)#Button to GPIO23
 GPIO.setup(26, GPIO.OUT)  #LED to GPIO14
 
 try:
     while True:
-         button_state = GPIO.input(19)
+         button_state = GPIO.input(27)
          if button_state == False:
              GPIO.output(26, True)
              print('Button Pressed...')
