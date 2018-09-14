@@ -8,7 +8,6 @@ app = Flask(__name__)
 
 ledService = LedService()
 alarmService = AlarmService()
-# temperatureReader = TemperatureReader()
 temperatureService = TemperatureService()
 
 defaultResponse = Response(" ", status=200)
@@ -43,7 +42,7 @@ def alarmOff():
     
 @app.route("/temperature", methods=["GET"])
 def readTemperature():
-    temperature = temperatureService.readTemperature()
+    temperature = temperatureService.readTemperatureAndWriteOnDisplay()
     response = Response(temperature, status=200)
     response.headers.set("Content-Type", "text/plain")
     response.headers.set("Access-Control-Allow-Origin", "*")
