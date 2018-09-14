@@ -1,6 +1,7 @@
 import Adafruit_GPIO.SPI as SPI
 import Adafruit_SSD1306
 import RPi.GPIO as GPIO
+import time
 
 from PIL import Image
 from PIL import ImageDraw
